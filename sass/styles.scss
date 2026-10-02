@@ -15,7 +15,7 @@ header {
 
 footer {
   .content {
-    border-top: 1px solid $keyline-color;
+    border-top: 1px solid red;
     padding-bottom: 20px;
   }
   .to-top-wrapper {
@@ -26,7 +26,7 @@ footer {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: 1px solid $keyline-color;
+    border: 1px solid red;
     background: #fff;
   }
   .to-top-wrapper .to-top {
