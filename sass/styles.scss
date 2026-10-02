@@ -11,6 +11,12 @@ header {
   text-align: center;
   align-items: center;
   justify-content: center;
+
+  img {
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+  }
 }
 
 footer {
