@@ -248,13 +248,18 @@ section#evento {
     margin-top:48px;
     margin-bottom:48px;
   }
+  iframe {
+    border: 8px solid #8B4105;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  }
   #location {
     color: #F5EDDC;
     padding: 12px;
     padding-top: 24px;
     padding-bottom: 24px;
     font-family: "Bros";
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1.5;
     font-weight: 800;
     background-color: #6B1B18;
