@@ -7,9 +7,10 @@
 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Casamento Guijo!</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,9 +58,11 @@
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
+        onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
+
 <body id="top">
     <nav>
         <section class="row">
@@ -79,7 +82,63 @@
         </div>
     </header>
     <section id="evento">
+        <div class="col-sm-12" id="timer">
+            <div class="row">
+                <script>
+                    (function () {
+                        const second = 1000,
+                            minute = second * 60,
+                            hour = minute * 60,
+                            day = hour * 24;
 
+                        //I'm adding this section so I don't have to keep updating this pen every year :-)
+                        //remove this if you don't need it
+                        let today = new Date(),
+                            dd = String(today.getDate()).padStart(2, "0"),
+                            mm = String(today.getMonth() + 1).padStart(2, "0"),
+                            yyyy = today.getFullYear(),
+                            nextYear = yyyy + 1,
+                            dayMonth = "09/30/",
+                            birthday = dayMonth + yyyy;
+
+                        today = mm + "/" + dd + "/" + yyyy;
+                        if (today > birthday) {
+                            birthday = dayMonth + nextYear;
+                        }
+                        //end
+
+                        const countDown = new Date(birthday).getTime(),
+                            x = setInterval(function () {
+
+                                const now = new Date().getTime(),
+                                    distance = countDown - now;
+
+                                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                                //do something later when date is reached
+                                if (distance < 0) {
+                                    document.getElementById("headline").innerText = "It's my birthday!";
+                                    document.getElementById("countdown").style.display = "none";
+                                    document.getElementById("content").style.display = "block";
+                                    clearInterval(x);
+                                }
+                                //seconds
+                            }, 0)
+                    }());
+                </script>
+                <div id="countdown">
+                    <ul>
+                        <li><span id="days"></span>days</li>
+                        <li><span id="hours"></span>Hours</li>
+                        <li><span id="minutes"></span>Minutes</li>
+                        <li><span id="seconds"></span>Seconds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 
@@ -102,7 +161,7 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {
@@ -120,4 +179,5 @@
     ga('send', 'pageview');
 </script>
 </body>
+
 </html>
