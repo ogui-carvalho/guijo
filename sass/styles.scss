@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Lavender";
+  src: url("../fonts/lavender.woff") format("woff");
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  font-family: "Lavender";
 }
 ol, ul {
 	list-style: none;
@@ -42,14 +49,35 @@ table {
 	border-spacing: 0;
 }
 nav {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
   width: 100%;
   z-index: 1;
   background-image: url("../img/nav-bg-2.png");
   background-size: 12%;
 
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: 10%;
+    padding: 16px 0;
+
+    li {
+      a {
+        color: #F5EDDC;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #6B1B18;
+          color: #F5EDDC;
+        }
+      }
+    }
+  }
 }
 header {
   width: 100%!important;
