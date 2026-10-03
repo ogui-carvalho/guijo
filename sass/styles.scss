@@ -102,6 +102,20 @@ header {
 }
 section#evento {
   background-image: url("../img/nav-bg-2.png");
+  min-height: 500px;
+    .row {
+      width: 80%;
+      margin: auto;
+    }
+    ul {
+      color: #F5EDDC;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      padding: 48px;
+      font-size: 68px;
+    }
 }
 
 footer {
