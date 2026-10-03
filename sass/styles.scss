@@ -226,7 +226,8 @@ section#evento {
       --R: calc(var(--size)*sqrt(var(--m)*var(--m) + 1));
   ul {
     font-family: "Bros";
-    color: #6B1B18;
+    color: #F5EDDC;
+    font-weight: 800;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -234,8 +235,11 @@ section#evento {
     padding: 48px;
     font-size: 24px;
     margin: auto;
-    background-color: #F5EDDC;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    // background-color: #F5EDDC;
     background-image: url("../img/nav-bg-2.png");
+    background-size: 40%;
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
