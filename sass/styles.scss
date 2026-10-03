@@ -168,7 +168,8 @@ nav {
         transition: all 0.3s ease-in-out;
 
         &:hover {
-          background-color: #6B1B18;
+          background: url("../img/nav-bg-1.png");
+          background-size: 20%;
           color: #F5EDDC;
         }
       }
