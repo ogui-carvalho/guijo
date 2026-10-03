@@ -237,8 +237,8 @@ section#evento {
     margin: auto;
     margin-top: 48px;
     margin-bottom: 48px;
-    // background-color: #F5EDDC;
-    background-image: url("../img/nav-bg-2.png");
+    background-color: #6B1B18;
+    // background-image: url("../img/nav-bg-2.png");
     background-size: 40%;
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
@@ -247,7 +247,7 @@ section#evento {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 48px 0;
+    margin: 0 48px;
   }
   #location {
     color: #F5EDDC;
