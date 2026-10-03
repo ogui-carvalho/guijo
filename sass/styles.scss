@@ -2,6 +2,10 @@
   font-family: "Lavender";
   src: url("../fonts/lavender.woff") format("woff");
 }
+@font-face {
+  font-family: "Bros";
+  src: url("../fonts/bros.otf") format("otf");
+}
 
 
 html,
@@ -206,13 +210,16 @@ section#evento {
     display: flex;
     justify-content: center;
     padding-top: 120px;
+    flex-flow: column;
     h1 {
-      font-size: 68px;
+      font-size: 92px;
       color: #F5EDDC;
+      text-align: center;
     }
   }
 
   ul {
+    font-family: "Bros";
     color: #F5EDDC;
     display: flex;
     justify-content: space-between;
@@ -220,6 +227,7 @@ section#evento {
     width: 80%;
     padding: 48px;
     font-size: 48px;
+    margin: auto;
   }
 }
 
