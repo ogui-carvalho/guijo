@@ -47,7 +47,8 @@ nav {
   // left: 0;
   width: 100%;
   z-index: 1;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),url("../img/nav-bg-2.png") center center;
+  background-image: url("../img/nav-bg-2.png");
+  background-size: 12%;
 
 }
 header {
