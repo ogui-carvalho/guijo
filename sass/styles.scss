@@ -8,12 +8,14 @@ header {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
 
   img {
     max-height: 80vh;
+    max-width: 80vw;
     width: auto;
     height: auto;
   }
