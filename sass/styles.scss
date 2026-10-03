@@ -169,7 +169,7 @@ nav {
 
         &:hover {
           background: url("../img/nav-bg-1.png");
-          background-size: 100%;
+          background-size: 200%;
           color: #F5EDDC;
         }
       }
@@ -247,12 +247,13 @@ section#evento {
     align-items: center;
     margin-top:48px;
     margin-bottom:48px;
+      iframe {
+        border: 8px solid #8B4105;
+        box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+      }
   }
-  iframe {
-    border: 8px solid #8B4105;
-    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
-  }
+
   #location {
     color: #F5EDDC;
     padding: 12px;
