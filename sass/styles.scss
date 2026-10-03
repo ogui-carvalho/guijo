@@ -200,6 +200,7 @@ header {
 section#evento {
   background-image: url("../img/nav-bg-2.png");
   min-height: 500px;
+  display: flex;
 
   .row {
     width: 80%;
@@ -222,7 +223,7 @@ section#evento {
     font-family: "Bros";
     color: #F5EDDC;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 80%;
     padding: 48px;
