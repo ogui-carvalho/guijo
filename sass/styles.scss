@@ -238,8 +238,6 @@ section#evento {
     margin-top: 48px;
     margin-bottom: 48px;
     background-color: #6B1B18;
-    // background-image: url("../img/nav-bg-2.png");
-    background-size: 40%;
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
@@ -253,10 +251,15 @@ section#evento {
   #location {
     color: #F5EDDC;
     padding: 12px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     font-family: "Bros";
     font-size: 32px;
     line-height: 1.5;
     font-weight: 800;
+    background-color: #6B1B18;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
 }
 
