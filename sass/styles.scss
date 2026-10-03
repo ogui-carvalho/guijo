@@ -235,11 +235,9 @@ section#evento {
     font-size: 24px;
     margin: auto;
     background-color: #F5EDDC;
-     background-color: #E5E5F7;
-opacity: 0.8;
-background-image:  radial-gradient(circle 23px at 20px 8px, #444CF7 23px, transparent 24px), radial-gradient(circle 23px at 20px 32px, #E5E5F7 23px, transparent 24px), linear-gradient(#E5E5F7 50%, #444CF7 50%);
-background-size: 40px 40px;
-background-position: 0 0, 20px 0, 0 0;
+    background-image: url("../img/nav-bg-2.png");
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
   #location {
     color: #F5EDDC;
