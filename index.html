@@ -156,7 +156,7 @@
     </section>
 </body>
 <section id="spotify-playlist">
-    <button id="spotify-playlist-toggle" class="circle">
+    <button id="spotify-playlist-toggle" onclick="toggleSpotifyPlaylist()" class="circle">
         <div class="triangle"></div>
     </button>
     <div id="spotify-playlist-embed-container" style="display:none;">
@@ -192,6 +192,14 @@
                 });
             });
         };
+        function toggleSpotifyPlaylist() {
+            const container = document.getElementById('spotify-playlist-embed-container');
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
     </script>
 </section>
 

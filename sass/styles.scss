@@ -313,6 +313,8 @@ footer {
   position: fixed;
   bottom: 15%;
   right: 50px;
+  display:flex;
+  justify-content: end;
   /* Black arrow/circle outline with white background */
 .circle {
 	cursor: pointer;
