@@ -166,9 +166,11 @@
         let playlistController = null;
         let element = null;
         let options = null;
+        let iframeAPI = OnErrorEventHandlerNonNull
 
         // 3. This exact function name is required by the Spotify script
         window.onSpotifyIframeApiReady = (IFrameAPI) => {
+            iframeAPI = IFrameAPI;
             const element = document.getElementById('spotify-playlist-embed');
 
             const options = {
