@@ -200,6 +200,9 @@
             } else {
                 container.style.display = 'none';
             }
+            if (playlistController) {
+                playlistController.togglePlay(); // Alternates play/pause
+            }
         }
     </script>
 </section>
