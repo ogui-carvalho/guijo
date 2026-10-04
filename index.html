@@ -164,6 +164,8 @@
     <script>
         // Global variable to keep track of the controller instance
         let playlistController = null;
+        let element = null;
+        let options = null;
 
         // 3. This exact function name is required by the Spotify script
         window.onSpotifyIframeApiReady = (IFrameAPI) => {
@@ -176,6 +178,9 @@
             };
 
             // 4. Instantiate the controller factory
+
+        };
+        const togglePlayback = () => {
             IFrameAPI.createController(element, options, (EmbedController) => {
                 playlistController = EmbedController;
 
@@ -190,10 +195,7 @@
                 });
             });
         };
-        const togglePlayback = () => {
-            document.getElementById('spotify-playlist-embed').style.display = 'block';
-            document.getElementById('spotify-playlist-toggle').style.display = 'none';
-        };
+
     </script>
 </section>
 
