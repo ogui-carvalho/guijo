@@ -318,8 +318,8 @@ footer {
   /* Black arrow/circle outline with white background */
 .circle {
 	cursor: pointer;
-	background-color: #fff;
-	border: 2px solid #000;
+	background-color: #D9A521;
+	border: 2px solid #6B1B18;
 	border-radius: 100%;
 	position: relative;
 	cursor: pointer;
@@ -329,19 +329,19 @@ footer {
 	width: 3em;
 	
 	&:hover {
-		background-color: #e4e4e4;
+		background-color: #6B1B18;
 	}
 }
 
 .triangle {
-	background-color: #000;
+	background-color: #6B1B18;
 	border-top-right-radius: 30%;
 	height: 0.6em;
 	width: 0.6em;
 	margin-left: -2px;
 	text-align: left;
 	position: relative;
-	top: 50%;
+	top: 15%;
 	left: 50%;
 	transform: 
 		rotate(30deg) 
@@ -353,7 +353,7 @@ footer {
 	&:after {
 		content: "";
 		position: absolute;
-		background-color: #000;
+		background-color: #6B1B18;
 		border-top-right-radius: 30%;
 		height: 0.6em;
 		width: 0.6em;

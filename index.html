@@ -194,6 +194,7 @@
         };
         function toggleSpotifyPlaylist() {
             const container = document.getElementById('spotify-playlist-embed-container');
+            document.getElementById('spotify-playlist-toggle').style.display = 'none';
             if (container.style.display === 'none') {
                 container.style.display = 'block';
             } else {
