@@ -306,3 +306,72 @@ footer {
     margin: 0 2px;
   }
 }
+
+
+#spotify-playlist {
+  width: 280px;
+  height: 280px;
+  position: fixed;
+  bottom: 20%;
+  right: 50px;
+  /* Black arrow/circle outline with white background */
+.circle {
+	cursor: pointer;
+	background-color: #fff;
+	border: 2px solid #000;
+	border-radius: 100%;
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	height: 3em;
+	width: 3em;
+	
+	&:hover {
+		background-color: #e4e4e4;
+	}
+}
+
+.triangle {
+	background-color: #000;
+	border-top-right-radius: 30%;
+	height: 0.6em;
+	width: 0.6em;
+	margin-left: -2px;
+	text-align: left;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: 
+		rotate(30deg) 
+		skewX(-30deg) 
+		scale(1, 0.866)
+		translate(-50%, -50%);
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		background-color: #000;
+		border-top-right-radius: 30%;
+		height: 0.6em;
+		width: 0.6em;
+	}
+	
+	&:before {
+		transform: 
+			rotate(-135deg) 
+			skewX(-45deg) 
+			scale(1.414, 0.707) 
+			translate(0, -50%);
+	}
+	
+	&:after {
+		transform: 
+			rotate(135deg) 
+			skewY(-45deg) 
+			scale(0.707, 1.414) 
+			translate(50%);
+	}
+}
+}
