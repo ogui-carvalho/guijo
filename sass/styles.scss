@@ -310,6 +310,7 @@ footer {
 
 #spotify-playlist {
   width: 300px;
+  height: 48px;
   position: fixed;
   bottom: 15%;
   right: 50px;
@@ -330,6 +331,9 @@ footer {
 	
 	&:hover {
 		background-color: #6B1B18;
+    .triangle {
+      background-color: #D9A521;
+    }
 	}
 }
 
