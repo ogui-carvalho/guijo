@@ -152,6 +152,62 @@
         </div>
     </section>
 </body>
+  <div id="spotify-playlist-embed"></div>
+
+  <!-- Optional control buttons -->
+  <div style="margin-top: 20px;">
+    <button onclick="togglePlayback()">Play / Pause</button>
+    <button onclick="changePlaylist()">Load Next Playlist</button>
+  </div>
+
+  <!-- 2. Include the Spotify iFrame API script asynchronously -->
+  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+  <script>
+    // Global variable to keep track of the controller instance
+    let playlistController = null;
+
+    // 3. This exact function name is required by the Spotify script
+    window.onSpotifyIframeApiReady = (IFrameAPI) => {
+      const element = document.getElementById('spotify-playlist-embed');
+      
+      const options = {
+        uri: 'spotify:playlist:37i9dQZEVXbMZ5PAcNTDXd', // The Spotify Playlist URI
+        width: '100%',
+        height: '352' // Standard height for desktop playlist embeds
+      };
+
+      // 4. Instantiate the controller factory
+      IFrameAPI.createController(element, options, (EmbedController) => {
+        playlistController = EmbedController;
+
+        // Optional: Listen for events inside the iframe player
+        playlistController.addListener('ready', () => {
+          console.log('The playlist player is ready!');
+        });
+
+        playlistController.addListener('playback_update', (event) => {
+          const { loading, currentPosition, duration, isPaused } = event.data;
+          console.log(`Paused: ${isPaused}, Position: ${currentPosition}/${duration}`);
+        });
+      });
+    };
+
+    // 5. Control methods example
+    function togglePlayback() {
+      if (playlistController) {
+        playlistController.togglePlay(); // Alternates play/pause
+      }
+    }
+
+    function changePlaylist() {
+      if (playlistController) {
+        // Dynamically load a different playlist via URI or URL string
+        const newPlaylistUri = 'spotify:playlist:37i9dQZEVXbNG2KDcFcKOF';
+        playlistController.loadEntity(newPlaylistUri); 
+      }
+    }
+  </script>
 
 <footer>
     <div class="container">
