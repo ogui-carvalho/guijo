@@ -156,7 +156,12 @@
     </section>
 </body>
 <section id="spotify-playlist">
+    <button id="spotify-playlist-toggle" class="circle">
+        <div class="triangle"></div>
+    </button>
+    <div id="spotify-playlist-embed-container" style="display:none;">
     <div id="spotify-playlist-embed"></div>
+    </div>
     <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
     <script>
         // Global variable to keep track of the controller instance
