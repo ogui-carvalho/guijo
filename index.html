@@ -65,8 +65,8 @@
     <nav>
         <ul class="main-nav js--main-nav">
             <li><a href="#top">Início</a></li>
-            <li><a href="#evento">Evento</a></li>
-            <li><a href="#dresscode">Dress Code</a></li>
+            <li><a href="#evento">O Evento</a></li>
+            <li><a href="#guia">Guia do Convidado</a></li>
             <li><a href="#gifts">Lista de Presentes</a></li>
         </ul>
     </nav>
@@ -75,70 +75,70 @@
     </header>
     <section id="evento">
         <div id="timer">
-<script>
-(function () {
-    const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+            <script>
+                (function () {
+                    const second = 1000,
+                        minute = second * 60,
+                        hour = minute * 60,
+                        day = hour * 24;
 
-    const now = new Date();
-    const currentYear = now.getFullYear();
+                    const now = new Date();
+                    const currentYear = now.getFullYear();
 
-    // Event: May 30 at 17:00 GMT-3
-    let birthday = `${currentYear}-05-15T17:00:00-03:00`;
-    let countDown = new Date(birthday).getTime();
+                    // Event: May 30 at 17:00 GMT-3
+                    let birthday = `${currentYear}-05-15T17:00:00-03:00`;
+                    let countDown = new Date(birthday).getTime();
 
-    // If this year's event has already passed,
-    // use May 30 of next year
-    if (now.getTime() >= countDown) {
-        birthday = `${currentYear + 1}-05-15T17:00:00-03:00`;
-        countDown = new Date(birthday).getTime();
-    }
+                    // If this year's event has already passed,
+                    // use May 30 of next year
+                    if (now.getTime() >= countDown) {
+                        birthday = `${currentYear + 1}-05-15T17:00:00-03:00`;
+                        countDown = new Date(birthday).getTime();
+                    }
 
-    const x = setInterval(function () {
+                    const x = setInterval(function () {
 
-        const now = new Date().getTime();
-        const distance = countDown - now;
+                        const now = new Date().getTime();
+                        const distance = countDown - now;
 
-        document.getElementById("days").innerText =
-            Math.floor(distance / day);
+                        document.getElementById("days").innerText =
+                            Math.floor(distance / day);
 
-        document.getElementById("hours").innerText =
-            Math.floor((distance % day) / hour);
+                        document.getElementById("hours").innerText =
+                            Math.floor((distance % day) / hour);
 
-        document.getElementById("minutes").innerText =
-            Math.floor((distance % hour) / minute);
+                        document.getElementById("minutes").innerText =
+                            Math.floor((distance % hour) / minute);
 
-        document.getElementById("seconds").innerText =
-            Math.floor((distance % minute) / second);
+                        document.getElementById("seconds").innerText =
+                            Math.floor((distance % minute) / second);
 
-        // Event has arrived
-        if (distance < 0) {
-            document.getElementById("headline").innerText =
-                "It's my birthday!";
+                        // Event has arrived
+                        if (distance < 0) {
+                            document.getElementById("headline").innerText =
+                                "It's my birthday!";
 
-            document.getElementById("countdown").style.display = "none";
-            document.getElementById("content").style.display = "block";
+                            document.getElementById("countdown").style.display = "none";
+                            document.getElementById("content").style.display = "block";
 
-            clearInterval(x);
-        }
+                            clearInterval(x);
+                        }
 
-    }, 1000);
+                    }, 1000);
 
-})();
-</script>
+                })();
+            </script>
 
 
-                <div id="countdown">
-                    <h1>Está chegando!</h1>
-                    <ul>
-                        <li><span id="days"></span> Dias</li>
-                        <li><span id="hours"></span> Horas</li>
-                        <li><span id="minutes"></span> Minutos</li>
-                        <li><span id="seconds"></span> Segundos</li>
-                    </ul>
-                </div>
+            <div id="countdown">
+                <h1>Está chegando!</h1>
+                <ul>
+                    <li><span id="days"></span> Dias</li>
+                    <li><span id="hours"></span> Horas</li>
+                    <li><span id="minutes"></span> Minutos</li>
+                    <li><span id="seconds"></span> Segundos</li>
+                </ul>
+            </div>
         </div>
         <div id="location-container">
             <div id="location">
@@ -151,6 +151,10 @@
                 width="400" height="300" allowfullscreen="" loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
+    </section>
+    <section id="guia" style="background-color: #F5EDDC; height: 500px;">
+        <h1>Dicas, informações, e dress code</h1>
+
     </section>
 </body>
 <section id="spotify-playlist">
