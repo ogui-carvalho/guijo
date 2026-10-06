@@ -95,13 +95,13 @@
     const currentYear = now.getFullYear();
 
     // Event: May 30 at 17:00 GMT-3
-    let birthday = `${currentYear}-05-30T17:00:00-03:00`;
+    let birthday = `${currentYear}-05-15T17:00:00-03:00`;
     let countDown = new Date(birthday).getTime();
 
     // If this year's event has already passed,
     // use May 30 of next year
     if (now.getTime() >= countDown) {
-        birthday = `${currentYear + 1}-05-30T17:00:00-03:00`;
+        birthday = `${currentYear + 1}-05-15T17:00:00-03:00`;
         countDown = new Date(birthday).getTime();
     }
 
