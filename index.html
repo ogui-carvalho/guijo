@@ -84,59 +84,60 @@
     <section id="evento">
         <div class="col-sm-12" id="timer">
             <div class="row">
-                <script>
-                    (function () {
-                        const second = 1000,
-                            minute = second * 60,
-                            hour = minute * 60,
-                            day = hour * 24;
+<script>
+(function () {
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
-                        // Automatically use this year's date, or next year's if it has passed
-                        let today = new Date(),
-                            yyyy = today.getFullYear(),
-                            nextYear = yyyy + 1,
-                            dayMonth = "05/30",
-                            birthday = `${dayMonth}/${yyyy}T17:00:00-03:00`;
+    const now = new Date();
+    const currentYear = now.getFullYear();
 
-                        // If this year's event has already passed, use next year
-                        if (today.getTime() > new Date(birthday).getTime()) {
-                            birthday = `${dayMonth}/${nextYear}T17:00:00-03:00`;
-                        }
+    // Event: May 30 at 17:00 GMT-3
+    let birthday = `${currentYear}-05-30T17:00:00-03:00`;
+    let countDown = new Date(birthday).getTime();
 
-                        // Event date/time: May 30 at 17:00 GMT-3
-                        const countDown = new Date(birthday).getTime();
+    // If this year's event has already passed,
+    // use May 30 of next year
+    if (now.getTime() >= countDown) {
+        birthday = `${currentYear + 1}-05-30T17:00:00-03:00`;
+        countDown = new Date(birthday).getTime();
+    }
 
-                        const x = setInterval(function () {
+    const x = setInterval(function () {
 
-                            const now = new Date().getTime(),
-                                distance = countDown - now;
+        const now = new Date().getTime();
+        const distance = countDown - now;
 
-                            document.getElementById("days").innerText =
-                                Math.floor(distance / day);
+        document.getElementById("days").innerText =
+            Math.floor(distance / day);
 
-                            document.getElementById("hours").innerText =
-                                Math.floor((distance % day) / hour);
+        document.getElementById("hours").innerText =
+            Math.floor((distance % day) / hour);
 
-                            document.getElementById("minutes").innerText =
-                                Math.floor((distance % hour) / minute);
+        document.getElementById("minutes").innerText =
+            Math.floor((distance % hour) / minute);
 
-                            document.getElementById("seconds").innerText =
-                                Math.floor((distance % minute) / second);
+        document.getElementById("seconds").innerText =
+            Math.floor((distance % minute) / second);
 
-                            // When the event is reached
-                            if (distance < 0) {
-                                document.getElementById("headline").innerText =
-                                    "It's my birthday!";
+        // Event has arrived
+        if (distance < 0) {
+            document.getElementById("headline").innerText =
+                "It's my birthday!";
 
-                                document.getElementById("countdown").style.display = "none";
-                                document.getElementById("content").style.display = "block";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
 
-                                clearInterval(x);
-                            }
+            clearInterval(x);
+        }
 
-                        }, 1000);
-                    }());
-                </script>
+    }, 1000);
+
+})();
+</script>
+
 
                 <div id="countdown">
                     <h1>Está chegando!</h1>
