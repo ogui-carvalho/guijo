@@ -364,9 +364,10 @@ section#gifts {
   .gift-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(72px, auto) 1fr auto;
+    grid-template-rows: minmax(72px, auto) minmax(0, 1fr) auto;
     row-gap: 8px;
     align-content: start;
+    align-items: stretch;
     min-height: 210px;
     padding: 18px;
     border: 2px solid #d9a521;
@@ -378,7 +379,6 @@ section#gifts {
     &:has(> .gift-illustrations) {
       grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
       column-gap: 12px;
-      align-items: center;
 
       h3 {
         grid-column: 2;
@@ -402,6 +402,7 @@ section#gifts {
     p {
       grid-column: 1 / -1;
       grid-row: 2;
+      align-self: start;
       font-size: 16px;
       line-height: 1.45;
     }
