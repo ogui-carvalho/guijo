@@ -285,7 +285,7 @@
                             <img src="img/SVG/Prancheta%2022%20co%CC%81pia%203.svg" alt="Ilustração de um cachorro">
                             <img src="img/SVG/Prancheta%2021%20co%CC%81pia%204.svg" alt="Ilustração de um cachorro">
                             <img src="img/SVG/Prancheta%2029%20co%CC%81pia%203.svg" alt="Ilustração de um gato">
-                            <img src="img/SVG/Prancheta%2026%20co%CC%81pia.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2026%20co%CC%81pia.svg" alt="Ilustração da gata Gaia">
                             <img src="img/SVG/Prancheta%2028.svg" alt="Ilustração de um gato">
                             <img src="img/SVG/Prancheta%2025.svg" alt="Ilustração de um gato">
                         </div>
@@ -365,7 +365,7 @@
                         <span class="gift-value">R$ 319</span>
                     </article>
                     <article class="gift-card">
-                        <img class="gift-art" src="img/SVG/Prancheta%2026%20co%CC%81pia%203.svg" alt="Ilustração de um gato tigrado com uma orelha">
+                        <img class="gift-art" src="img/SVG/Prancheta%2027%20co%CC%81pia.svg" alt="Ilustração de um gato tigrado com uma orelha">
                         <h3>Uma homenagem ao Ulisses</h3>
                         <p>Em memória do nosso gatinho tigrado, com uma orelhinha e suas marcas tão próprias.</p>
                         <span class="gift-value">R$ 349</span>
@@ -374,6 +374,20 @@
             </section>
         </div>
     </section>
+    <dialog class="gift-checkout-modal" id="gift-checkout-modal" aria-labelledby="gift-checkout-title"
+        data-public-key="TEST-e096fa28-d1db-49fc-be95-0b2433ca219c">
+        <div class="gift-checkout-content">
+            <button class="gift-checkout-close" id="gift-checkout-close" type="button"
+                aria-label="Fechar checkout">&times;</button>
+            <p class="gift-checkout-eyebrow">Lista de presentes</p>
+            <h2 id="gift-checkout-title">Seu presente</h2>
+            <p class="gift-checkout-amount" id="gift-checkout-amount"></p>
+            <p class="gift-checkout-status" id="gift-checkout-status" role="status" aria-live="polite">
+                Checkout de demonstração: nenhum pagamento será cobrado. Este site não tem um servidor seguro para processar pagamentos.
+            </p>
+            <div id="paymentBrick_container"></div>
+        </div>
+    </dialog>
 <section id="spotify-playlist">
     <button id="spotify-playlist-toggle" onclick="toggleSpotifyPlaylist()" class="circle">
         <div class="triangle"></div>
@@ -441,6 +455,8 @@
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="js/payment-brick.js"></script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
 <!-- Google Analytics -->
