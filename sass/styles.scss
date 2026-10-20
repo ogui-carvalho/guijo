@@ -268,6 +268,132 @@ section#evento {
   }
 }
 
+section#gifts {
+  padding: 72px 24px;
+  background: #f5eddc url("../img/bg-guide-1.png") center / cover;
+  color: #6b1b18;
+  text-align: center;
+
+  .gifts-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gifts-eyebrow {
+    color: #8a5c15;
+    font-family: "Bros";
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  h1 {
+    margin: 12px 0 18px;
+    font-family: "Bros";
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  .gifts-intro,
+  .gifts-note {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .gifts-note {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .gift-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 42px;
+    text-align: left;
+  }
+
+  .gift-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 230px;
+    padding: 24px;
+    border: 2px solid #d9a521;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 6px 6px 0 rgba(107, 27, 24, 0.12);
+
+    h2 {
+      margin: 10px 0;
+      font-family: "Bros";
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.4;
+    }
+  }
+
+  .gift-icon {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .gift-value {
+    margin-top: auto;
+    padding-top: 18px;
+    color: #8a5c15;
+    font-family: "Bros";
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .pets-note {
+    margin-top: 38px;
+    font-family: "Bros";
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 900px) {
+  section#gifts .gift-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  section#gifts {
+    padding: 52px 18px;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .gifts-intro {
+      font-size: 18px;
+    }
+
+    .gift-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .gift-card {
+      min-height: 0;
+    }
+
+    .pets-note {
+      font-size: 18px;
+    }
+  }
+}
+
 footer {
   .content {
     border-top: 1px solid red;
