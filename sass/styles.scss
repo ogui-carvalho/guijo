@@ -158,12 +158,11 @@ nav {
 
   ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 8px 24px;
-    width: min(100% - 40px, 1100px);
-    margin: 0 auto;
-    padding: 20px 0;
+    width: 60%;
+    margin-left: 20%;
+    padding: 24px 0;
 
     li {
 
@@ -574,6 +573,14 @@ section#gifts {
 }
 
 @media (max-width: 900px) {
+  nav ul {
+    justify-content: center;
+    gap: 8px 24px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
   section#gifts .gift-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
