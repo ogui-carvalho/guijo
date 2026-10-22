@@ -33,6 +33,26 @@
                 customization: {
                     paymentMethods: {
                         creditCard: 'all'
+                    },
+                    visual: {
+                        style: {
+                            theme: 'default',
+                            customVariables: {
+                                baseColor: '#6b1b18',
+                                baseColorFirstVariant: '#4b211c',
+                                baseColorSecondVariant: '#f5eddc',
+                                textPrimaryColor: '#4b211c',
+                                textSecondaryColor: '#6b1b18',
+                                formBackgroundColor: '#f5eddc',
+                                inputBackgroundColor: '#ffffff',
+                                formInputsTextColor: '#4b211c',
+                                inputBorderColor: '#d9a521',
+                                buttonTextColor: '#f5eddc',
+                                outlinePrimaryColor: '#6b1b18',
+                                outlineSecondaryColor: '#d9a521',
+                                fontFamily: 'Arial'
+                            }
+                        }
                     }
                 },
                 callbacks: {

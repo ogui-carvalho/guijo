@@ -487,6 +487,7 @@ section#gifts {
   border-radius: 10px;
   background: #f5eddc;
   color: #4b211c;
+  font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
 
   &::backdrop {
@@ -514,23 +515,25 @@ section#gifts {
 
   .gift-checkout-eyebrow {
     color: #6b1b18;
-    font-family: "Bros";
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   h2 {
     max-width: calc(100% - 36px);
     margin: 8px 0;
     color: #6b1b18;
-    font-family: "Lavender";
-    font-size: 32px;
+    font-size: 28px;
+    font-weight: 700;
     line-height: 1.3;
   }
 
   .gift-checkout-amount {
     color: #6b1b18;
-    font-family: "Bros";
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   .gift-checkout-status {
