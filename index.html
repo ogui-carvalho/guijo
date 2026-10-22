@@ -1,295 +1,480 @@
-i <!doctype html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wedding SVG Artwork Catalog</title>
-<style>
-:root { color-scheme: light; --wine: #6b1b18; --brown: #4b211c; --cream: #f5eddc; --gold: #d9a521; }
-* { box-sizing: border-box; }
-body { margin: 0; padding: 32px; background: var(--cream); color: var(--brown); font: 16px/1.5 Arial, Helvetica, sans-serif; }
-header { max-width: 1200px; margin: 0 auto 24px; }
-h1 { margin: 0 0 8px; color: var(--wine); font-size: clamp(1.7rem, 4vw, 2.5rem); }
-header p { max-width: 780px; margin: 8px 0; }
-.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.swatch { display: inline-block; width: 16px; height: 16px; border: 1px solid rgba(0,0,0,.24); border-radius: 50%; background: var(--swatch); vertical-align: middle; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
-.card { display: grid; grid-template-columns: 132px minmax(0,1fr); gap: 16px; min-height: 190px; padding: 14px; border: 1px solid var(--gold); border-radius: 8px; background: #fff; box-shadow: 3px 3px 0 rgba(107,27,24,.1); }
-.art { display: grid; place-items: center; min-height: 150px; padding: 10px; border-radius: 5px; background: var(--cream); }
-.art img { display: block; width: 100%; height: 130px; object-fit: contain; }
-.card-info h2 { margin: 0; color: var(--wine); font-size: 24px; }
-.card-info p { margin: 5px 0 10px; font-size: 14px; }
-.swatches { display: flex; gap: 5px; margin: 8px 0; }
-details { margin-top: 8px; font-size: 13px; }
-summary { color: var(--wine); cursor: pointer; font-weight: 700; }
-ul { margin: 8px 0 0; padding-left: 18px; }
-li { margin: 5px 0; overflow-wrap: anywhere; }
-li span { display: block; color: #5c514a; font-size: 12px; }
-a { color: var(--wine); }
-@media (max-width: 480px) { body { padding: 18px 12px; } .grid { grid-template-columns: 1fr; } .card { grid-template-columns: 110px minmax(0,1fr); gap: 12px; padding: 10px; } }
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Casamento Guijo!</title>
+    <meta name="description" content="We would like to invite you to our big day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Ram & Antara getting hitched">
+    <meta property="og:description" content="We would like to invite you to our big day.">
+    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
+        onerror="loadCssFromCDN('font-awesome.css')">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body>
-<header>
-<h1>Wedding SVG artwork catalog</h1>
-<p>There are 28 unique illustrations below. Each is shown once; the SVG files with the same number are color versions of that design. Use the number to tell me what the drawing represents—for example, “#08 is a coffee cup.”</p>
-<p>Later, I can match the names you provide to gifts by context and choose a color variant that fits each card. The current website uses some of these drawings already, but this catalog does not change the site.</p>
-<div class="legend"><span><i class="swatch" style="--swatch:#e0a72e"></i>Gold</span><span><i class="swatch" style="--swatch:#a05d30"></i>Terracotta</span><span><i class="swatch" style="--swatch:#8b4105"></i>Ochre</span><span><i class="swatch" style="--swatch:#7d7633"></i>Olive</span><span><i class="swatch" style="--swatch:#6b1b18"></i>Wine</span></div>
-</header>
-<main class="grid">
-        <article class="card">
-            <div class="art" aria-label="Artwork #02"><img src="img/SVG/Prancheta%202.svg" alt="Wedding illustration #02" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#02</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span></div>
-                <details><summary>1 SVG file</summary><ul><li><a href="img/SVG/Prancheta%202.svg" target="_blank" rel="noopener">Prancheta 2.svg</a><span>wine #6b1b18, olive #7d7633, ochre #8b4105, terracotta #a05d30, gold #e0a72e</span></li></ul></details>
+
+<body id="top">
+    <nav>
+        <ul class="main-nav js--main-nav">
+            <li><a href="#top">Início</a></li>
+            <li><a href="#evento">O Evento</a></li>
+            <!-- <li><a href="#guia">Guia do Convidado</a></li> -->
+            <li><a href="#gifts">Lista de Presentes</a></li>
+        </ul>
+    </nav>
+    <header id="top">
+        <img src="img/logo-lg.png" alt="Guilherme e Giovanna - 15/05/2026">
+    </header>
+    <section id="evento">
+        <div id="timer">
+            <script>
+                (function () {
+                    const second = 1000,
+                        minute = second * 60,
+                        hour = minute * 60,
+                        day = hour * 24;
+
+                    const now = new Date();
+                    const currentYear = now.getFullYear();
+
+                    // Event: May 30 at 17:00 GMT-3
+                    let birthday = `${currentYear}-05-15T17:00:00-03:00`;
+                    let countDown = new Date(birthday).getTime();
+
+                    // If this year's event has already passed,
+                    // use May 30 of next year
+                    if (now.getTime() >= countDown) {
+                        birthday = `${currentYear + 1}-05-15T17:00:00-03:00`;
+                        countDown = new Date(birthday).getTime();
+                    }
+
+                    const x = setInterval(function () {
+
+                        const now = new Date().getTime();
+                        const distance = countDown - now;
+
+                        document.getElementById("days").innerText =
+                            Math.floor(distance / day);
+
+                        document.getElementById("hours").innerText =
+                            Math.floor((distance % day) / hour);
+
+                        document.getElementById("minutes").innerText =
+                            Math.floor((distance % hour) / minute);
+
+                        document.getElementById("seconds").innerText =
+                            Math.floor((distance % minute) / second);
+
+                        // Event has arrived
+                        if (distance < 0) {
+                            document.getElementById("headline").innerText =
+                                "It's my birthday!";
+
+                            document.getElementById("countdown").style.display = "none";
+                            document.getElementById("content").style.display = "block";
+
+                            clearInterval(x);
+                        }
+
+                    }, 1000);
+
+                })();
+            </script>
+
+
+            <div id="countdown">
+                <h1>Está chegando!</h1>
+                <ul>
+                    <li><span id="days"></span> dias</li>
+                    <li><span id="hours"></span> horas</li>
+                    <li><span id="minutes"></span> minutos</li>
+                    <li><span id="seconds"></span> segundos</li>
+                </ul>
             </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #03"><img src="img/SVG/Prancheta%203.svg" alt="Wedding illustration #03" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#03</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span></div>
-                <details><summary>1 SVG file</summary><ul><li><a href="img/SVG/Prancheta%203.svg" target="_blank" rel="noopener">Prancheta 3.svg</a><span>wine #6b1b18, gold #e0a72e</span></li></ul></details>
+        </div>
+        <div id="location-container">
+            <div id="location">
+                <h2>15 de Maio de 2027, 17h</h2>
+                <p>Chácara e Buffet 3 Amores</p>
+                <p>Rua Pessego, 38 - Guarulhos/SP</p>
             </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #04"><img src="img/SVG/Prancheta%204.svg" alt="Wedding illustration #04" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#04</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span></div>
-                <details><summary>1 SVG file</summary><ul><li><a href="img/SVG/Prancheta%204.svg" target="_blank" rel="noopener">Prancheta 4.svg</a><span>gold #e0a72e</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #05"><img src="img/SVG/Prancheta%205%20co%CC%81pia.svg" alt="Wedding illustration #05" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#05</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%205%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 5 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%205.svg" target="_blank" rel="noopener">Prancheta 5.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%205%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 5 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%205%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 5 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%205%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 5 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #06"><img src="img/SVG/Prancheta%206%20co%CC%81pia.svg" alt="Wedding illustration #06" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#06</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%206%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 6 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%206.svg" target="_blank" rel="noopener">Prancheta 6.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%206%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 6 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%206%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 6 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%206%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 6 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #07"><img src="img/SVG/Prancheta%207%20co%CC%81pia.svg" alt="Wedding illustration #07" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#07</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%207%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 7 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%207.svg" target="_blank" rel="noopener">Prancheta 7.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%207%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 7 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%207%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 7 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%207%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 7 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #08"><img src="img/SVG/Prancheta%208%20co%CC%81pia.svg" alt="Wedding illustration #08" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#08</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%208%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 8 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%208.svg" target="_blank" rel="noopener">Prancheta 8.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%208%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 8 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%208%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 8 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%208%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 8 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #09"><img src="img/SVG/Prancheta%209%20co%CC%81pia.svg" alt="Wedding illustration #09" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#09</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%209%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 9 cópia.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%209.svg" target="_blank" rel="noopener">Prancheta 9.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%209%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 9 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%209%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 9 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%209%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 9 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #10"><img src="img/SVG/Prancheta%2010%20co%CC%81pia.svg" alt="Wedding illustration #10" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#10</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2010%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 10 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2010.svg" target="_blank" rel="noopener">Prancheta 10.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2010%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 10 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2010%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 10 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2010%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 10 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #11"><img src="img/SVG/Prancheta%2011%20co%CC%81pia.svg" alt="Wedding illustration #11" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#11</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2011%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 11 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2011.svg" target="_blank" rel="noopener">Prancheta 11.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2011%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 11 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2011%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 11 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2011%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 11 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #12"><img src="img/SVG/Prancheta%2012%20co%CC%81pia.svg" alt="Wedding illustration #12" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#12</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2012%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 12 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2012.svg" target="_blank" rel="noopener">Prancheta 12.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2012%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 12 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2012%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 12 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2012%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 12 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #13"><img src="img/SVG/Prancheta%2013%20co%CC%81pia.svg" alt="Wedding illustration #13" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#13</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2013%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 13 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2013.svg" target="_blank" rel="noopener">Prancheta 13.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2013%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 13 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2013%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 13 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2013%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 13 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #14"><img src="img/SVG/Prancheta%2014%20co%CC%81pia.svg" alt="Wedding illustration #14" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#14</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2014%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 14 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2014.svg" target="_blank" rel="noopener">Prancheta 14.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2014%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 14 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2014%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 14 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2014%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 14 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #15"><img src="img/SVG/Prancheta%2015%20co%CC%81pia.svg" alt="Wedding illustration #15" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#15</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2015%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 15 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2015.svg" target="_blank" rel="noopener">Prancheta 15.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2015%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 15 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2015%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 15 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2015%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 15 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #16"><img src="img/SVG/Prancheta%2016%20co%CC%81pia.svg" alt="Wedding illustration #16" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#16</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2016%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 16 cópia.svg</a><span>wine #6b1b18</span></li><li><a href="img/SVG/Prancheta%2016.svg" target="_blank" rel="noopener">Prancheta 16.svg</a><span>wine #6b1b18</span></li><li><a href="img/SVG/Prancheta%2016%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 16 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2016%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 16 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2016%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 16 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #17"><img src="img/SVG/Prancheta%2017%20co%CC%81pia.svg" alt="Wedding illustration #17" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#17</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2017%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 17 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2017.svg" target="_blank" rel="noopener">Prancheta 17.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2017%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 17 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2017%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 17 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2017%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 17 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #18"><img src="img/SVG/Prancheta%2018%20co%CC%81pia.svg" alt="Wedding illustration #18" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#18</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2018%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 18 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2018.svg" target="_blank" rel="noopener">Prancheta 18.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2018%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 18 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2018%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 18 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2018%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 18 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #19"><img src="img/SVG/Prancheta%2019%20co%CC%81pia.svg" alt="Wedding illustration #19" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#19</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2019%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 19 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2019.svg" target="_blank" rel="noopener">Prancheta 19.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2019%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 19 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2019%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 19 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2019%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 19 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #20"><img src="img/SVG/Prancheta%2020.svg" alt="Wedding illustration #20" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#20</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span></div>
-                <details><summary>1 SVG file</summary><ul><li><a href="img/SVG/Prancheta%2020.svg" target="_blank" rel="noopener">Prancheta 20.svg</a><span>gold #e0a72e</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #21"><img src="img/SVG/Prancheta%2021%20co%CC%81pia.svg" alt="Wedding illustration #21" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#21</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2021%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 21 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2021.svg" target="_blank" rel="noopener">Prancheta 21.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2021%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 21 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2021%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 21 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2021%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 21 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #22"><img src="img/SVG/Prancheta%2022%20co%CC%81pia.svg" alt="Wedding illustration #22" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#22</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2022%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 22 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2022.svg" target="_blank" rel="noopener">Prancheta 22.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2022%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 22 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2022%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 22 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2022%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 22 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #23"><img src="img/SVG/Prancheta%2023%20co%CC%81pia.svg" alt="Wedding illustration #23" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#23</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2023%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 23 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2023.svg" target="_blank" rel="noopener">Prancheta 23.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2023%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 23 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2023%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 23 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2023%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 23 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #24"><img src="img/SVG/Prancheta%2024%20co%CC%81pia.svg" alt="Wedding illustration #24" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#24</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2024%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 24 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2024.svg" target="_blank" rel="noopener">Prancheta 24.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2024%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 24 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2024%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 24 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2024%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 24 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #25"><img src="img/SVG/Prancheta%2025%20co%CC%81pia.svg" alt="Wedding illustration #25" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#25</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2025%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 25 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2025.svg" target="_blank" rel="noopener">Prancheta 25.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2025%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 25 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2025%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 25 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2025%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 25 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #26"><img src="img/SVG/Prancheta%2026%20co%CC%81pia.svg" alt="Wedding illustration #26" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#26</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2026%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 26 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2026.svg" target="_blank" rel="noopener">Prancheta 26.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2026%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 26 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2026%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 26 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2026%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 26 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #27"><img src="img/SVG/Prancheta%2027%20co%CC%81pia.svg" alt="Wedding illustration #27" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#27</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2027%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 27 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2027.svg" target="_blank" rel="noopener">Prancheta 27.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2027%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 27 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2027%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 27 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2027%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 27 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #28"><img src="img/SVG/Prancheta%2028%20co%CC%81pia.svg" alt="Wedding illustration #28" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#28</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2028%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 28 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2028.svg" target="_blank" rel="noopener">Prancheta 28.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2028%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 28 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2028%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 28 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2028%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 28 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-        <article class="card">
-            <div class="art" aria-label="Artwork #29"><img src="img/SVG/Prancheta%2029%20co%CC%81pia.svg" alt="Wedding illustration #29" loading="lazy"></div>
-            <div class="card-info">
-                <h2>#29</h2>
-                <p>Reply with this number and what the illustration depicts.</p>
-                <div class="swatches" aria-label="Colors used in artwork"><span class="swatch" title="terracotta (#a05d30)" style="--swatch:#a05d30"></span><span class="swatch" title="gold (#e0a72e)" style="--swatch:#e0a72e"></span><span class="swatch" title="ochre (#8b4105)" style="--swatch:#8b4105"></span><span class="swatch" title="olive (#7d7633)" style="--swatch:#7d7633"></span><span class="swatch" title="wine (#6b1b18)" style="--swatch:#6b1b18"></span></div>
-                <details><summary>5 SVG files</summary><ul><li><a href="img/SVG/Prancheta%2029%20co%CC%81pia.svg" target="_blank" rel="noopener">Prancheta 29 cópia.svg</a><span>terracotta #a05d30</span></li><li><a href="img/SVG/Prancheta%2029.svg" target="_blank" rel="noopener">Prancheta 29.svg</a><span>gold #e0a72e</span></li><li><a href="img/SVG/Prancheta%2029%20co%CC%81pia%202.svg" target="_blank" rel="noopener">Prancheta 29 cópia 2.svg</a><span>ochre #8b4105</span></li><li><a href="img/SVG/Prancheta%2029%20co%CC%81pia%203.svg" target="_blank" rel="noopener">Prancheta 29 cópia 3.svg</a><span>olive #7d7633</span></li><li><a href="img/SVG/Prancheta%2029%20co%CC%81pia%204.svg" target="_blank" rel="noopener">Prancheta 29 cópia 4.svg</a><span>wine #6b1b18</span></li></ul></details>
-            </div>
-        </article>
-</main>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.518268404399!2d-46.402002524456904!3d-23.369461154570608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce88df9fd3e8a5%3A0x421ed6fba481c963!2sCh%C3%A1cara%20e%20Buffet%203%20Amores!5e0!3m2!1sen!2sbr!4v1791049124739!5m2!1sen!2sbr"
+                width="400" height="300" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+    <!-- <section id="guia" style="background-image: url('../img/bg-guide-1.png'); height: 500px;">
+        <h1>Dicas, informações, e dress code</h1>
+
+    </section> -->
+    <section id="gifts">
+        <div class="gifts-content">
+            <p class="gifts-eyebrow">Nova York, nossos pets e boas histórias</p>
+            <h1>Lista de Presentes</h1>
+            <p class="gifts-intro">Sua presença já é nosso maior presente. Se quiser, escolha um mimo para a viagem ou para os pets.</p>
+
+            <section class="gift-category" aria-labelledby="honeymoon-gifts-title">
+                <h2 id="honeymoon-gifts-title">Lua de mel em Nova York</h2>
+                <p>Uma ajudinha para passeios e comidinhas em Nova York.</p>
+                <div class="gift-grid">
+                    <article class="gift-card">
+                        <h3>Pizza novaiorquina do tamanho do nosso prato</h3>
+                        <p>Para provar que uma fatia pode, sim, ser uma refeição completa.</p>
+                        <span class="gift-value">R$ 187</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Uma passagem no metrô (e talvez na linha errada)</h3>
+                        <p>Patrocine nosso talento de transformar qualquer caminho em passeio turístico.</p>
+                        <span class="gift-value">R$ 289</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%208%20co%CC%81pia.svg" alt="Ilustração de duas bebidas para levar">
+                        <h3>Café para enfrentar o preço do café</h3>
+                        <p>Uma dose de energia para caminhar muito e reclamar só um pouquinho.</p>
+                        <span class="gift-value">R$ 143</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2013%20co%CC%81pia%204.svg" alt="Ingresso comemorativo de Guilherme e Giovanna">
+                        <h3>Broadway e uma lágrima emocionada</h3>
+                        <p>Ajude a financiar o musical, os aplausos e a gente dizendo “foi incrível” por uma semana.</p>
+                        <span class="gift-value">R$ 1.297</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Foto clássica com a Estátua da Liberdade</h3>
+                        <p>Inclui pose de turista, vento no cabelo e pelo menos 47 tentativas.</p>
+                        <span class="gift-value">R$ 337</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Fundo “não sabíamos que fazia esse frio”</h3>
+                        <p>Para um chocolate quente, uma camada extra e zero dedos congelados.</p>
+                        <span class="gift-value">R$ 429</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%209%20co%CC%81pia%203.svg" alt="Ilustração de um croissant">
+                        <h3>O bagel que vai virar nosso café da manhã oficial</h3>
+                        <p>Uma mordida em Nova York e, pronto, já estamos escolhendo nosso lugar favorito.</p>
+                        <span class="gift-value">R$ 219</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Volta no Central Park (com pausa para foto)</h3>
+                        <p>Para caminhar como nos filmes e fingir que não estamos consultando o mapa.</p>
+                        <span class="gift-value">R$ 487</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Vista lá do alto e joelhos um pouco bambos</h3>
+                        <p>Uma ajudinha para ver a cidade inteira e tirar a foto “somos minúsculos!”.</p>
+                        <span class="gift-value">R$ 897</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Balsa, brisa e cabelo em modo filme</h3>
+                        <p>Um passeio para ver Manhattan da água e voltar com muitas fotos tremidas.</p>
+                        <span class="gift-value">R$ 539</span>
+                    </article>
+                    <article class="gift-card">
+                        <h3>Cachorro-quente de rua, sem cachorro (prometemos)</h3>
+                        <p>Uma clássica aventura gastronômica para contar aos nossos próprios cachorros.</p>
+                        <span class="gift-value">R$ 159</span>
+                    </article>
+                </div>
+            </section>
+
+            <section class="gift-category" aria-labelledby="pets-gifts-title">
+                <h2 id="pets-gifts-title">Mimos para os seis chefes</h2>
+                <p>Eros, o grandão; Venus, a pequena; Nosferatu, Gaia, Luna e Aura: seis personalidades, seis pedidos diferentes.</p>
+                <div class="gift-grid">
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2022%20co%CC%81pia.svg" alt="Ilustração de um cachorro">
+                            <img src="img/SVG/Prancheta%2021%20co%CC%81pia%202.svg" alt="Ilustração de um cachorro">
+                        </div>
+                        <h3>Plantão VIP do Eros, da Venus e da turma felina</h3>
+                        <p>Babá para o grandão, a pequenininha e os quatro gatos: seis chefes, cada um com sua própria agenda.</p>
+                        <span class="gift-value">R$ 1.493</span>
+                    </article>
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2022%20co%CC%81pia%204.svg" alt="Ilustração de um cachorro">
+                            <img src="img/SVG/Prancheta%2021%20co%CC%81pia.svg" alt="Ilustração de um cachorro">
+                        </div>
+                        <h3>Petiscos pro Eros (e um mimo do tamanho da Venus)</h3>
+                        <p>Um agrado para o cachorro grandão e outro na medida da sua companheira menor.</p>
+                        <span class="gift-value">R$ 239</span>
+                    </article>
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2029%20co%CC%81pia%204.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2026%20co%CC%81pia%203.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2028%20co%CC%81pia%202.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2025%20co%CC%81pia.svg" alt="Ilustração de um gato">
+                        </div>
+                        <h3>Clube do brinquedo do Nosferatu, da Gaia, da Luna e da Aura</h3>
+                        <p>Quatro brinquedos para quatro gatos: o Nosferatu pode inspecionar, e a Gaia, a Luna e a Aura podem escolher a caixa.</p>
+                        <span class="gift-value">R$ 389</span>
+                    </article>
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2022%20co%CC%81pia%202.svg" alt="Ilustração de um cachorro">
+                            <img src="img/SVG/Prancheta%2021%20co%CC%81pia%203.svg" alt="Ilustração de um cachorro">
+                        </div>
+                        <h3>Volta do Eros e passeio no ritmo da Venus</h3>
+                        <p>Uma caminhada caprichada para ele gastar as patas e para ela farejar cada novidade sem pressa.</p>
+                        <span class="gift-value">R$ 317</span>
+                    </article>
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2029%20co%CC%81pia%202.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2026.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2028%20co%CC%81pia%204.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2025%20co%CC%81pia%202.svg" alt="Ilustração de um gato">
+                        </div>
+                        <h3>Hora do sachê: Nosferatu, Gaia, Luna e Aura</h3>
+                        <p>Um estoque para manter os quatro gatos satisfeitos enquanto a gente estiver fora.</p>
+                        <span class="gift-value">R$ 279</span>
+                    </article>
+                    <article class="gift-card gift-card--illustrated">
+                        <div class="gift-illustrations">
+                            <img src="img/SVG/Prancheta%2022%20co%CC%81pia%203.svg" alt="Ilustração de um cachorro">
+                            <img src="img/SVG/Prancheta%2021%20co%CC%81pia%204.svg" alt="Ilustração de um cachorro">
+                            <img src="img/SVG/Prancheta%2029%20co%CC%81pia%203.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2026%20co%CC%81pia.svg" alt="Ilustração da gata Gaia">
+                            <img src="img/SVG/Prancheta%2028.svg" alt="Ilustração de um gato">
+                            <img src="img/SVG/Prancheta%2025.svg" alt="Ilustração de um gato">
+                        </div>
+                        <h3>Uma lembrança novaiorquina pro Eros, Venus e os quatro gatos</h3>
+                        <p>Seis mimos, com os nomes de Nosferatu, Gaia, Luna e Aura na lista de compras.</p>
+                        <span class="gift-value">R$ 479</span>
+                    </article>
+                </div>
+            </section>
+
+            <section class="gift-category" aria-labelledby="celebration-gifts-title">
+                <h2 id="celebration-gifts-title">Um brinde às coisas que são a nossa cara</h2>
+                <p>O bar, o show e outros pedacinhos da festa que queremos levar para a vida a dois.</p>
+                <div class="gift-grid">
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2011%20co%CC%81pia%202.svg" alt="Logo do Jhonny's Bar &amp; Restaurante">
+                        <h3>Uma rodada no bar dos noivos</h3>
+                        <p>Ajude a pagar a conta do bar — o brinde é nosso, mas a saideira é por sua conta.</p>
+                        <span class="gift-value">R$ 793</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2013.svg" alt="Ingresso comemorativo de Guilherme e Giovanna">
+                        <h3>Ingresso para o show da nossa vida</h3>
+                        <p>Um presente para curtirmos música ao vivo e cantar como se estivéssemos no palco.</p>
+                        <span class="gift-value">R$ 1.189</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%206%20co%CC%81pia%203.svg" alt="Ilustração de uma vitrola com disco de vinil">
+                        <h3>Disco novo para a trilha sonora da casa</h3>
+                        <p>Para dançar na sala e descobrir quem fica responsável por escolher a próxima música.</p>
+                        <span class="gift-value">R$ 489</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%205%20co%CC%81pia.svg" alt="Ilustração de um casal dançando">
+                        <h3>Uma dança a dois (sem contar os passos)</h3>
+                        <p>Patrocine mais uma música, mais um abraço e uma coreografia totalmente improvisada.</p>
+                        <span class="gift-value">R$ 293</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%207%20co%CC%81pia%204.svg" alt="Ilustração do carro Just Married">
+                        <h3>Gasolina para a fuga dos recém-casados</h3>
+                        <p>Uma ajudinha para colocar o Fusca na estrada — sem latinhas no escapamento.</p>
+                        <span class="gift-value">R$ 679</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2010%20co%CC%81pia.svg" alt="Ilustração de um buquê de flores">
+                        <h3>Flores para prolongar o clima de festa</h3>
+                        <p>Um buquê para lembrar que o casamento acabou, mas a comemoração continua em casa.</p>
+                        <span class="gift-value">R$ 379</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2012%20co%CC%81pia%203.svg" alt="Placa comemorativa Bom Retiro">
+                        <h3>Um brinde ao nosso cantinho favorito</h3>
+                        <p>Uma rodada para celebrar o Bom Retiro, as boas histórias e as próximas aventuras.</p>
+                        <span class="gift-value">R$ 349</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%208%20co%CC%81pia%204.svg" alt="Ilustração de duas bebidas com canudos">
+                        <h3>Refresco para a pista de dança</h3>
+                        <p>Para recarregar as energias entre um brinde e a próxima música favorita.</p>
+                        <span class="gift-value">R$ 259</span>
+                    </article>
+                </div>
+                <h2 class="gift-tribute-title">Homenagens cheias de saudade</h2>
+                <p class="gift-tribute-intro">Dionisio, Apolo e Ulisses continuam fazendo parte da nossa família e das nossas melhores lembranças.</p>
+                <div class="gift-grid">
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2024%20co%CC%81pia%204.svg" alt="Ilustração monocromática em vinho escuro de um gato">
+                        <h3>Um carinho para o Dionisio</h3>
+                        <p>Uma homenagem ao nosso pretão, o gatinho mais carinhoso do mundo.</p>
+                        <span class="gift-value">R$ 289</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2026%20co%CC%81pia.svg" alt="Ilustração terracota de um gato">
+                        <h3>Uma lembrança para o Apolo</h3>
+                        <p>Para o nosso laranjo maluco de cabecinha pequena, que segue enorme na nossa saudade.</p>
+                        <span class="gift-value">R$ 319</span>
+                    </article>
+                    <article class="gift-card">
+                        <img class="gift-art" src="img/SVG/Prancheta%2027%20co%CC%81pia.svg" alt="Ilustração de um gato tigrado com uma orelha">
+                        <h3>Uma homenagem ao Ulisses</h3>
+                        <p>Em memória do nosso gatinho tigrado, com uma orelhinha e suas marcas tão próprias.</p>
+                        <span class="gift-value">R$ 349</span>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+    <dialog class="gift-checkout-modal" id="gift-checkout-modal" aria-labelledby="gift-checkout-title"
+        data-public-key="TEST-e096fa28-d1db-49fc-be95-0b2433ca219c">
+        <div class="gift-checkout-content">
+            <button class="gift-checkout-close" id="gift-checkout-close" type="button"
+                aria-label="Fechar checkout">&times;</button>
+            <p class="gift-checkout-eyebrow">Lista de presentes</p>
+            <h2 id="gift-checkout-title">Seu presente</h2>
+            <p class="gift-checkout-amount" id="gift-checkout-amount"></p>
+            <p class="gift-checkout-status" id="gift-checkout-status" role="status" aria-live="polite">
+                Checkout de demonstração: nenhum pagamento será cobrado. Este site não tem um servidor seguro para processar pagamentos.
+            </p>
+            <div id="paymentBrick_container"></div>
+        </div>
+    </dialog>
+<section id="spotify-playlist">
+    <button id="spotify-playlist-toggle" onclick="toggleSpotifyPlaylist()" class="circle">
+        <div class="triangle"></div>
+    </button>
+    <div id="spotify-playlist-embed-container" style="display:none;">
+        <div id="spotify-playlist-embed"></div>
+    </div>
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    <script>
+        // Global variable to keep track of the controller instance
+        let playlistController = null;
+
+        // 3. This exact function name is required by the Spotify script
+        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+            const element = document.getElementById('spotify-playlist-embed');
+
+            const options = {
+                uri: 'spotify:playlist:0dNEMHJ4lpI7Bm1gzgj3e1', // The Spotify Playlist URI
+                width: '100%',
+                height: '140' // Standard height for desktop playlist embeds
+            };
+
+            // 4. Instantiate the controller factory
+            IFrameAPI.createController(element, options, (EmbedController) => {
+                playlistController = EmbedController;
+
+                // Optional: Listen for events inside the iframe player
+                playlistController.addListener('ready', () => {
+                    console.log('The playlist player is ready!');
+                });
+
+                playlistController.addListener('playback_update', (event) => {
+                    const { loading, currentPosition, duration, isPaused } = event.data;
+                    console.log(`Paused: ${isPaused}, Position: ${currentPosition}/${duration}`);
+                });
+            });
+        };
+        function toggleSpotifyPlaylist() {
+            const container = document.getElementById('spotify-playlist-embed-container');
+            document.getElementById('spotify-playlist-toggle').style.display = 'none';
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+            if (playlistController) {
+                playlistController.togglePlay(); // Alternates play/pause
+            }
+        }
+    </script>
+</section>
+
+
+<footer>
+    <div class="content">
+        <!-- <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span> -->
+        <p>Feito por Guilherme com muito <span class="fa fa-heart pulse2"></span> para Giovanna</p>
+    </div>
+</footer>
+<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.min.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="js/payment-brick.js"></script>
+e<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-46465113-4', 'auto');
+    ga('send', 'pageview');
+</script>
 </body>
+
 </html>
